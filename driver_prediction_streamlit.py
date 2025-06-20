@@ -22,21 +22,30 @@ def load_model(path: Path):
 MODEL_PATH = Path("driver_catboost_v2.cbm")
 model = load_model(MODEL_PATH)
 
-st.markdown("""
-<div style='
-    background: linear-gradient(90deg, #4CAF50, #81C784);
-    padding: 20px 30px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-'>
-    🚚 禹盛-司機人數預測
-</div>
-""", unsafe_allow_html=True)
+st.markdown(
+    f"""
+    <div style='
+        background: linear-gradient(90deg, #00AEAE, #5CDCDC);
+        padding: 16px 24px;
+        border-radius: 12px;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    '>
+        <img src='data:image/png;base64,{img_base64}' width='36' style='margin: 0;'/>
+        禹盛-司機人數預測
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 a, b = st.columns(2)
 with a:
