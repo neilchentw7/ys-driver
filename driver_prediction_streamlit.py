@@ -39,13 +39,12 @@ st.markdown(
         justify-content: center;
         gap: 12px;
     '>
-        <img src='data:image/png;base64,{img_base64}' width='36' style='margin: 0;'/>
-        禹盛-司機人數預測
+        <img src="data:image/png;base64,{img_base64}" width="36" style="margin: 0;"/>
+        <span>禹盛-司機人數預測</span>
     </div>
     """,
     unsafe_allow_html=True
 )
-
 
 a, b = st.columns(2)
 with a:
