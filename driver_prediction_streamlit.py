@@ -22,7 +22,21 @@ def load_model(path: Path):
 MODEL_PATH = Path("driver_catboost_v2.cbm")
 model = load_model(MODEL_PATH)
 
-st.title("🚚 禹盛-司機人數預測")
+st.markdown("""
+<div style='
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+'>
+    🚚 禹盛-司機人數預測
+</div>
+""", unsafe_allow_html=True)
 
 a, b = st.columns(2)
 with a:
@@ -82,7 +96,7 @@ if st.button("預測"):
     pred = model.predict(pool)[0]
     pred_round = int(np.round(pred))
 
-    st.metric("建議司機人數", f"{pred_round} ±1 若有泵送工地建議+1")
+    st.metric("建議司機人數(有泵送工地建議再+1)", f"{pred_round} ±1")
 
 st.divider()
 
