@@ -11,7 +11,7 @@ today     = datetime.now(tz_taipei)
 current_month   = today.month               # 1–12
 current_weekday = today.weekday() + 1       # Python 0–6 ➜ 1–7
 
-st.set_page_config(page_title="司機人數預測", page_icon="🚚", layout="centered")
+st.set_page_config(page_title="禹盛-司機人數預測", page_icon="🚚", layout="centered")
 
 @st.cache_resource
 def load_model(path: Path):
@@ -22,7 +22,7 @@ def load_model(path: Path):
 MODEL_PATH = Path("driver_catboost_v2.cbm")
 model = load_model(MODEL_PATH)
 
-st.title("🚚 司機人數預測")
+st.title("🚚 禹盛-司機人數預測")
 
 a, b = st.columns(2)
 with a:
@@ -82,7 +82,7 @@ if st.button("預測"):
     pred = model.predict(pool)[0]
     pred_round = int(np.round(pred))
 
-    st.metric("建議司機人數", f"{pred_round} ±1")
+    st.metric("建議司機人數", f"{pred_round} ±1 若有泵送工地建議+1")
 
 st.divider()
 
