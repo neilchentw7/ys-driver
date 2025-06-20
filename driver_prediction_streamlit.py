@@ -22,6 +22,16 @@ def load_model(path: Path):
 MODEL_PATH = Path("driver_catboost_v2.cbm")
 model = load_model(MODEL_PATH)
 
+import base64
+
+# 將 logo.png 編碼為 base64
+def image_to_base64(path):
+    with open(path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
+
+img_base64 = image_to_base64("logo.png")
+
+# 顯示含 logo 的自訂標題區塊
 st.markdown(
     f"""
     <div style='
@@ -40,7 +50,7 @@ st.markdown(
         gap: 12px;
     '>
         <img src="data:image/png;base64,{img_base64}" width="36" style="margin: 0;"/>
-        <span>禹盛-司機人數預測</span>
+        <span>禹盛 - 司機人數預測</span>
     </div>
     """,
     unsafe_allow_html=True
