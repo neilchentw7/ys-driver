@@ -36,21 +36,21 @@ st.markdown(
     f"""
     <div style='
         background: linear-gradient(90deg, #00AEAE, #5CDCDC);
-        padding: 16px 24px;
+        padding: 12px 18px;
         border-radius: 12px;
         text-align: center;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.2px;
         box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 12px;
     '>
-        <img src="data:image/png;base64,{img_base64}" width="36" style="margin: 0;"/>
-        <span>禹盛 - 司機人數預測</span>
+        <img src="data:image/png;base64,{img_base64}" width="32" style="margin: 0;"/>
+        <span>禹盛司機人數預測</span>
     </div>
     """,
     unsafe_allow_html=True
