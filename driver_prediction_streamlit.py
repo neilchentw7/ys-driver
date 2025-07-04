@@ -74,7 +74,7 @@ with a:
 with b:
     sites      = st.number_input("明日工地",            0, 100, 6)
     trips      = st.number_input("明日車次",            0, 200, 30)
-    far_trips  = st.number_input("明日遠距離車次(>留茂安)", 0, 200, 2)
+    far_trips  = st.number_input("明日遠距離車次(>留茂安>碼崙計入)", 0, 200, 2)
     super_far  = st.number_input("明日超遠(其中超遠台數)",  0, 200, 1)
 
 c, d = st.columns(2)
